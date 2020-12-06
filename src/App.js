@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Sidebar from "./components/Sidebar"
+import Header from "./components/Header"
+
+import { Route, Switch } from "react-router-dom"
+
+import Home from "./pages/Home"
+import Api from "./pages/Api"
+import GetStarted from "./pages/GetStarted"
+import HocBuilder from "./pages/HocBuilder"
+import Redux from "./pages/Redux"
+import Autobind from "./pages/Autobind"
+import Splitter from "./pages/Splitter"
+
+import "./styles/App.scss"
+
+const map = [
+    ["/api", Api],
+    ["/hoc-builder", HocBuilder],
+    ["/get-started", GetStarted],
+    ["/redux-and-reduxers", Redux],
+    ["/splitter", Splitter],
+    ["/autobind", Autobind],
+]
+
+const App = () => {
+    const [open, setOpen] = useState(false)
+
+    return (
+        <div className='App'>
+            <Header toggleMenu={() => setOpen(!open)} />
+            <div className='wrapper'>
+                <Sidebar open={open} closeMenu={() => setOpen(false)}/>
+                <div className='content'>
+                    <Switch>
+                        {map.map(item => (
+                            <Route path={item[0]} component={item[1]} />
+                        ))}
+                        <Route component={Home} />
+                    </Switch>
+                </div>
+            </div>
+        </div>
+    )
 }
 
-export default App;
+export default App
