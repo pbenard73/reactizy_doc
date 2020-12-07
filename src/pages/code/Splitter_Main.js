@@ -28,4 +28,4 @@ class App extends React.Component {
     }
 }
 
-export default Hoc(["user"], ["login"])(App, SubPage);`
+export default Hoc("user", "login")(App, SubPage);`

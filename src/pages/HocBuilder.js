@@ -26,6 +26,10 @@ export default () => (
         <p>
             The HocBuilder takes as argument an object with following keys :
             <dl>
+                <dt><b>apis</b></dt>
+                <dd>array : an array of api pool</dd>
+                <dt><b>reduxers</b></dt>
+                <dd>array : an array of reduxers</dd>
                 <dt><b>hocs</b></dt>
                 <dd>object : the shortname as key and third HOC as value</dd>
                 <dt><b>customs</b></dt>
@@ -38,6 +42,10 @@ export default () => (
                 <dd>object : options object to configure the HOC</dd>
             </dl>
         </p>
+
+        <h3>Beware of reduxers</h3>
+
+        <p>In order to retrieve all the states and reduxers actions, the first hocs you registered into the <code>Store</code> must be filled with the whole list of reduxers, those will serve to fill the redux store.</p>
 
         <h3>Thunks</h3>
         

@@ -20,7 +20,7 @@ export default () => (
         <Code>{apiPoolOne}</Code>
         <Code>{apiPoolTwo}</Code>
 
-        <p>After, register it in the <code>index.js</code> file</p>
+        <p>After, register it into your hoc</p>
         <p><i>You can use the <code>domainize</code> utility to set a custom domain for an api pool</i></p>
 
         <Code>{apiIndex}</Code>

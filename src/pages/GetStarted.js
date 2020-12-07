@@ -17,6 +17,17 @@ export default () => (
     <section name='get started' className='get_started'>
         <h1>Get Started</h1>
 
+        <h2>Create your Reduxers</h2>
+
+        <p>Register the reduxers you need to use</p>
+
+       <Code>{reduxerOne}</Code> 
+       <Code>{reduxerTwo}</Code> 
+
+        <h2>Create your Api routing files</h2>
+
+        <Code>{apiPool}</Code>
+
         <h2>Create your High Order Component</h2>
 
         <p>Register here your wanted HOC with their shortname. Be careful of unicity of the shortnames. It shouldn't be present in the reduxers pool and actions. <Link to={url}>Full details about the provided features</Link></p>
@@ -24,17 +35,6 @@ export default () => (
         <p>Here is an example with <code>withRouter</code> from <code>react-router-dom</code> and <code>withAlert</code> from <code>react-alert</code> packages</p>
 
        <Code>{registerHoc}</Code> 
-
-        <h2>Create the reduxers</h2>
-
-        <p>Register the reduxers you need to use</p>
-
-       <Code>{reduxerOne}</Code> 
-       <Code>{reduxerTwo}</Code> 
-       
-        <h2>Create your Api routing files</h2>
-
-        <Code>{apiPool}</Code>
 
         <h2>Implement your application</h2>
 
